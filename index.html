@@ -7,7 +7,8 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/league.css">
+		<link rel="stylesheet" href="css/custom.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,18 +25,217 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h2>Assessing the assessment</h2>
+					<p>Importance of methodology for measuring impact of immersion experiences</p>
+				</section>
+				<section>
+					<h2>Post course questions</h2>
+					<ul class="fragment">
+						<li >Did they learn?</li>
+						<li >Did they grow?</li>
+						<li >Was the class effective?</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Collect Data</h2>
+					<div class="fragment fcont fjustcontaround">	
+						<div style='display: flex; flex-direction: column; justify-content: flex-start;'>
+							<p class="smtxt7">Survey: Likert-like questions</p>
+							<p class="smtxt7">Look for trends in perception and learning</p>
+						</div>
+						<div id='stdevtab' class='fragment fcont fjustcontbetween smtxt5'>
+								<!-- content injected from likertTable.js -->				
+						</div>
+
+					</div>	
+					<div style='height: 50px;'></div>
+					<div id='oneQSummary' class='fragment smtxt5'>
+						<!-- content injected from likertTable.js -->	
+					</div>
+				</section>
+
+
+				<section>
+
+					but is there a better way to dig into the rich dataset?
+					<div class='fcont fdircol' style='justify-content: space-around;'>	
+						<div class='fragment fcont fdircol' style=' justify-content: flex-start;'>
+							<p class="smtxt7">Disaggregate and visualize</p>
+						</div>
+						<div id='stdevbar' class="fragment"></div>
+				</section>
+
+				<section>
+					Immersion Service Considerations
+					<p class='smtxt2'>Interested in change over time.</p>
+					<p class='smtxt2'>Pre- and Post-surveys are common.</p>
+					<div style='height: 50px;'></div>
+						<div class='fcont fjustcontaround' style='font-size: 0.75em !important'>
+							<div  class='fragment'>
+								Want information on<br />
+								<ul>
+									<li>Learning gains</li>
+									<li>Impact</li>
+									<li>Changes in perspective</li>
+								</ul>
+							</div>
+							<div class='fragment'>
+								Challenges<br />
+								<ul>
+									<li>Measuring change</li>
+									<li>Finding statistical significance</li>
+								</ul>
+							</div>
+						</div>	
+				</section>
+					
+
+				<section>
+				<div>Often looking at data like this</div>
+					<div id="preposttab">
+						<!-- populated from likertTable.js -->
+					</div>
+					<div style='visibility: hidden;'> <!-- HACK - hidden to keep space for next slide -->
+						<p>Q1 - Change!!</p>
+						<p>Q2 - No Change??</p>
+
+					</div>
+					
+				</section>
+
+				<section>
+				<div>Often looking at data like this</div>
+					<div id="preposttab2">
+						<!-- populated from likertTable.js -->
+					</div>
+					<div>
+						<p style="color: #a3e971">Q1 - Change!!</p>
+						<p style="color: #ed7494">Q2 - No Change??</p>
+
+					</div>
+					
+				</section>
+
+				<section>
+				<div class='smtxt8'>Disaggregate and visualize to see patterns in data</div>
+				<div style='height: 50px;'></div>
+					<div class="fcont">
+						<div  class='fcont fdircol fragment'>
+							<div class='smtxt7'>Change</div>
+							<div id='change-ex'></div>
+						</div>
+						<div  class='fcont fdircol fragment'>
+							<div class='smtxt7'>No change</div>
+							<div id='no-change-ex'></div>
+						</div>
+						<div  class='fcont fdircol fragment'>
+							<div class='smtxt7'>Change or churn?</div>
+							<div id='churn-ex'></div>
+						</div>
+						
+					</div>
+						
+
+				</section>
+
+
+				<section>
+
+					<div class="fcont fjustcontaround">
+						<div class="fcont fdircol fjustcontaround">
+							<div id='change-exsm'></div>
+							<div id='no-change-exsm'></div>
+							<div id='churn-exsm'></div>
+						</div>
+						<div id='changetab' class='smtxt8 falignselfcenter'></div>
+					</div>
+
+				</section>
+
+				<section>
+				Is this change significant?
+				<div id='change-v2'></div>
+				</section>
+
+				<section>
+				Visual statistics can help
+				<div class='smtxt7 fragment'>
+					<ul>
+						<li>Generate 19 randomized versions of data</li>
+						<li>Add the real data to the set to get a total of 20 data sets</li>
+						<li>Generate a chart for each set and shuffle them</li>
+						<li>Show panel of 20 charts to a naive audience</li>
+					</ul>
+				</div>
+				</section>
+
+				<section>	
+					<div class='fcont fdircol fjustcontaround'>
+						<div id="rndmrow1" class="fcont fjustcontbetween">
+							<div id="random-ex1"></div>	
+							<div id="random-ex2"></div>	
+							<div id="random-ex3"></div>	
+							<div id="random-ex4"></div>	
+							<div id="random-ex5"></div>	
+						</div>
+						<div id="rndmrow2" class="fcont fjustcontbetween">
+							<div id="random-ex6"></div>	
+							<div id="random-ex7"></div>	
+							<div id="random-ex8"></div>	
+							<div id="random-ex9"></div>	
+							<div id="random-ex10"></div>	
+						</div>
+						<div id="rndmrow3" class="fcont fjustcontbetween">
+							<div id="random-ex11"></div>	
+							<div id="random-ex12"></div>	
+							<div id="random-ex13"></div>	
+							<div id="random-ex14"></div>	
+							<div id="random-ex15"></div>	
+						</div>
+						<div id="rndmrow4" class="fcont fjustcontbetween">
+							<div id="random-ex16"></div>	
+							<div id="random-ex17"></div>	
+							<div id="random-ex18"></div>	
+							<div id="random-ex19"></div>	
+							<div id="random-ex20"></div>	
+						</div>
+					</div>
+					<div class="fragment smtxt7">If an observer can identify the real data,<br /> the pattern is significant at a p-value of 0.05</div>	
+				</section>
+
+				<section>
+					Example using real data
+				</section>
+
+				<section>
+					Slider for collecting better data
+				</section>
+
+				<section>
+					Fin
+				</section>
 			</div>
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
+		<script>
+			
+		</script>
+		<script src="js/d3.js"></script>
+		<script src="js/custom.js"></script>
+		<script src="js/likertTable.js"></script>
+		<script src="js/divBar01.js"></script>
+		<script src="js/slopeGraphs.js"></script>
+		<script src="js/visStats.js"></script>
+
 
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
+				transition: 'none',
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [

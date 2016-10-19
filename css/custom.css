@@ -1,0 +1,83 @@
+.comment {
+  color: #efefef;
+  font-size: 0.5em !important;
+  display: inline-block;
+  padding: 5px !important;
+  background: #999;
+  border-radius: 4px;
+  
+}
+
+.smtxt {
+  font-size: 0.5em !important;
+}
+
+.smtxt8 {
+  font-size: 0.8em !important;
+}
+
+
+.smtxt7 {
+  font-size: 0.7em !important;
+}
+
+.smtxt5 {
+  font-size: 0.5em !important;
+}
+
+.smtxt2 {
+  font-size: 0.8em !important;
+}
+
+/*flex classes*/
+.fcont { /*flex container tag*/
+  display: flex; 
+}
+
+.fdircol {
+  flex-direction: column;
+}
+
+.fjustcontaround {
+  justify-content: space-around;
+}
+
+.fjustcontbetween {
+  justify-content: space-between;
+}
+
+.falignitemscenter {
+  align-items: center;
+}
+
+.falignselfcenter {
+  align-self: center;
+}
+
+#stdevchart {
+  width: 250px;
+  height: 300px;
+  border: 1px dotted darkseagreen;
+  
+  flex-grow: 5;
+}
+
+.axis text,
+.xnone text {
+  font: 12px sans-serif;
+  fill: #efefef;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #efefef;
+  shape-rendering: crispEdges;
+}
+
+.xnone path,
+.xnone line {
+  fill: none;
+  stroke: none;
+  shape-rendering: crispEdges;
+}
