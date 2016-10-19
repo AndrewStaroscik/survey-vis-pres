@@ -2,24 +2,24 @@
   'use strict';
 
   // data
-  var q1Data = [
+  var rq1Data = [
     {pre: 3, post: 3},
-    {pre: 3, post: 2},
-    {pre: 1, post: 1},
-    {pre: 2, post: 2},
-    {pre: 2, post: 2},
-    {pre: 3, post: 2},
-    {pre: 2, post: 2},
-    {pre: 4, post: 2},
-    {pre: 2, post: 1},
-    {pre: 2, post: 1},
-    {pre: 2, post: 1},
-    {pre: 2, post: 1},
-    {pre: 3, post: 2},
-    {pre: 3, post: 3},
-    {pre: 1, post: 1},
-    {pre: 2, post: 1},
-    {pre: 2, post: 2}
+    {pre: 3, post: 4},
+    {pre: 5, post: 5},
+    {pre: 4, post: 5},
+    {pre: 4, post: 4},
+    {pre: 3, post: 4},
+    {pre: 4, post: 4},
+    {pre: 2, post: 5},
+    {pre: 4, post: 5},
+    {pre: 4, post: 5},
+    {pre: 5, post: 5},
+    {pre: 5, post: 5},
+    {pre: 5, post: 5},
+    {pre: 3, post: 4},
+    {pre: 5, post: 5},
+    {pre: 5, post: 5},
+    {pre: 5, post: 5}
   ];
 
   var changeEx = [
@@ -79,28 +79,56 @@
     {pre: 5, post: 4}
   ];
 
-  // process data before rendering:
-  var q1Renderable = processData(q1Data);
-  var changeRenderable = processData(changeEx);
-  var ncRenderable = processData(noChangeEx);
-  var churnRenderable = processData(churnEx);
-
-
   var changeRndSet = randomSets(changeEx);
-
   changeRndSet.unshift(changeEx);
 
-  changeRndSet = shuffleArray(changeRndSet);
+  var renderableChangeRndSet = [];
+
+  for (var i = 0; i < changeRndSet.length; i += 1) {
+    renderableChangeRndSet.push(processData(changeRndSet[i]))
+  }
 
 
 
+  var q1RndSet = randomSets(rq1Data);
+  q1RndSet.unshift(rq1Data);
 
-  for (var i = 0; i < 5; i += 1) addSlope('random-ex' + (i+1), changeRndSet[i], 2.5);
-  for (var i = 5; i < 10; i += 1) addSlope('random-ex' + (i+1), changeRndSet[i], 2.5);
-  for (var i = 10; i < 15; i += 1) addSlope('random-ex' + (i+1), changeRndSet[i], 2.5);
-  for (var i = 15; i < 20; i += 1) addSlope('random-ex' + (i+1), changeRndSet[i], 2.5);
 
-  function addSlope(id, data, size) {
+
+  var renderableQ1RndSet = [];
+
+  for (var i = 0; i < q1RndSet.length; i += 1) {
+    renderableQ1RndSet.push(processData(q1RndSet[i]))
+  }
+
+  var shuffArr = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+  var q1ShuffArr = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+
+  shuffArr = shuffleArray(shuffArr);
+  q1ShuffArr = shuffleArray(q1ShuffArr);
+
+
+  for (var i = 0; i < 5; i += 1) addSlope('random-ex' + (i+1), renderableChangeRndSet[shuffArr[i]], 2.5, 'n', shuffArr[i]);
+  for (var i = 5; i < 10; i += 1) addSlope('random-ex' + (i+1), renderableChangeRndSet[shuffArr[i]], 2.5, 'n', shuffArr[i]);
+  for (var i = 10; i < 15; i += 1) addSlope('random-ex' + (i+1), renderableChangeRndSet[shuffArr[i]], 2.5, 'n', shuffArr[i]);
+  for (var i = 15; i < 20; i += 1) addSlope('random-ex' + (i+1), renderableChangeRndSet[shuffArr[i]], 2.5, 'n', shuffArr[i]);
+
+  for (var i = 0; i < 5; i += 1) addSlope('random-ex' + (i+1) + 'a', renderableChangeRndSet[shuffArr[i]], 2.5, 'y', shuffArr[i]);
+  for (var i = 5; i < 10; i += 1) addSlope('random-ex' + (i+1) + 'a', renderableChangeRndSet[shuffArr[i]], 2.5, 'y', shuffArr[i]);
+  for (var i = 10; i < 15; i += 1) addSlope('random-ex' + (i+1) + 'a', renderableChangeRndSet[shuffArr[i]], 2.5, 'y', shuffArr[i]);
+  for (var i = 15; i < 20; i += 1) addSlope('random-ex' + (i+1) + 'a', renderableChangeRndSet[shuffArr[i]], 2.5, 'y', shuffArr[i]);
+
+  for (var i = 0; i < 5; i += 1) addSlope('q1-' + (i+1), renderableQ1RndSet[q1ShuffArr[i]], 2.5, 'n', q1ShuffArr[i]);
+  for (var i = 5; i < 10; i += 1) addSlope('q1-' + (i+1), renderableQ1RndSet[q1ShuffArr[i]], 2.5, 'n', q1ShuffArr[i]);
+  for (var i = 10; i < 15; i += 1) addSlope('q1-' + (i+1), renderableQ1RndSet[q1ShuffArr[i]], 2.5, 'n', q1ShuffArr[i]);
+  for (var i = 15; i < 20; i += 1) addSlope('q1-' + (i+1), renderableQ1RndSet[q1ShuffArr[i]], 2.5, 'n', q1ShuffArr[i]);
+
+  for (var i = 0; i < 5; i += 1) addSlope('q1-' + (i+1) + 'a', renderableQ1RndSet[q1ShuffArr[i]], 2.5, 'y', q1ShuffArr[i]);
+  for (var i = 5; i < 10; i += 1) addSlope('q1-' + (i+1) + 'a', renderableQ1RndSet[q1ShuffArr[i]], 2.5, 'y', q1ShuffArr[i]);
+  for (var i = 10; i < 15; i += 1) addSlope('q1-' + (i+1) + 'a', renderableQ1RndSet[q1ShuffArr[i]], 2.5, 'y', q1ShuffArr[i]);
+  for (var i = 15; i < 20; i += 1) addSlope('q1-' + (i+1) + 'a', renderableQ1RndSet[q1ShuffArr[i]], 2.5, 'y', q1ShuffArr[i]);
+
+  function addSlope(id, data, size, b, n) {
     var w = 300 / size,
         h = 350 / size,
         targetSVG = d3.select('#' + id).append('svg')
@@ -135,7 +163,19 @@
     var yAxis1 = d3.axisRight()
       .scale(y)
       .ticks(0);
-          
+
+    targetSVG.append('rect')
+      .attr('x', 0)
+      .attr('y', 0)
+      .attr('width', w)
+      .attr('height', h)
+      .style('fill', 'none')
+      .style('stroke-width', 5)
+      .style('stroke', function() {
+        if (n == 0 && b == 'y') return '#a3e971';
+        return 'none';
+      });
+
     targetSVG.append("g")
       .attr('transform', 'translate(0, ' + (25) + ')')
       .attr("class", "x xnone")
@@ -174,6 +214,7 @@
         return '#ed7494';
       })
       .style('stroke-width', function (d) {
+        if (d.pre == d.post) return 1;
         return d.count;
       })
       .style('stroke-linecap', 'round');
