@@ -89,6 +89,9 @@
   addSlope('no-change-ex', ncRenderable, 1);
   addSlope('churn-ex', churnRenderable, 1);
 
+  addSlope('no-change-ex2', ncRenderable, 1);
+  addSlope('churn-ex2', churnRenderable, 1);
+
   addSlope('change-exsm', changeRenderable, 1.75);
   addSlope('no-change-exsm', ncRenderable, 1.75);
   addSlope('churn-exsm', churnRenderable, 1.75);

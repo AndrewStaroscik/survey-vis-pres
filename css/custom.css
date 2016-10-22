@@ -66,6 +66,10 @@
   flex-grow: 5;
 }
 
+#slidercont {
+  width: 500px;
+}
+
 .axis text,
 .xnone text {
   font: 12px sans-serif;
