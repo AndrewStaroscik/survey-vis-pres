@@ -29,6 +29,10 @@
   font-size: 0.8em !important;
 }
 
+.rttxt {
+  text-align: right;
+}
+
 /*flex classes*/
 .fcont { /*flex container tag*/
   display: flex; 
